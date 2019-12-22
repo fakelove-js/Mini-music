@@ -1,0 +1,62 @@
+/* component/recommend.wxss */
+@import "../app.wxss";
+.recommend{
+  width:98%;
+  height:auto;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  position: relative;
+}
+.recommend-title{
+  display: flex;
+  width:98%;
+  padding:10rpx;
+  justify-content: space-between;
+  align-items: center;
+  text-indent: 1em;
+  color: white;
+}
+.recommend-title text:first-child{
+  font-size:30rpx;
+  font-weight: bolder;
+}
+.newSong{
+  background:white;
+  width: 98%;
+  height:auto;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content:center;
+  flex-flow: wrap;
+  margin:0 auto;
+  padding-bottom: 20rpx;
+
+}
+.songItem{
+  height:200rpx;
+  width:200rpx;
+  border-radius: 12rpx;
+  margin:45rpx 18rpx;
+  background-size: cover!important;
+  position: relative;
+}
+.songItem>text{
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  font-size:x-small;
+  color: gray;
+}
+.playTime{
+  text-align: right;
+  font-size:26rpx;
+  font-weight: bolder;
+}
+.newMv{
+  width: 98%;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  height:300px;
+  background: deeppink;
+  margin-bottom:1em;
+}
