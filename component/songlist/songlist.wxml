@@ -1,0 +1,28 @@
+<!--component/songlist/songlist.wxml-->
+<view class="songlist cover">
+  <view class="back" bindtap="back">
+    <icon class="iconfont icon-fanhui"></icon>
+    <text>歌单</text>
+  </view>
+  <swiper class="gedan" current="{{curIndex}}" previous-margin="100px" next-margin="100px" bindchange="indexChange">
+   <block wx:for="{{songlist}}" wx:key="index">
+      <swiper-item class="gedan-item {{curIndex==index?'curtxt':''}}" bindtap="lb_click" data-index="{{index}}"> 
+        <image src="{{item.coverImgUrl}}" class="images {{curIndex==index?'active':''}}"></image>
+        <view class="playCount">
+        <icon class="iconfont icon-bofang1"></icon>
+        </view>
+        <view class="desc">{{item.name}}</view>
+      </swiper-item>
+   </block>
+  </swiper>
+  <view class="dot">
+    <view wx:for="{{songlist.length}}" wx:key="index" class="iconfont icon-dot_loop {{curIndex==index?'dot_focus':''}}"></view>
+  </view>
+  <view class="album">
+    <view wx:for="{{songlistMore}}" wx:key="index" class="album-item iconfont">
+      <image src="{{item.coverImgUrl+'?param=500y500'}}" class="album-img"></image>
+      <view class="album-desc">{{item.name}}</view>
+    </view>
+  </view>
+</view>
+

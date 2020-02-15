@@ -3,8 +3,30 @@ page{
   display: flex;
   flex-direction: column;
   height:auto;
-}
 
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height:65px;
+  background-size:1000%;
+  animation:color-change-5x 10s linear infinite alternate both;
+}
+@keyframes color-change-5x{
+  0%{background: #ed4264}
+  10%{background: #93edc7}
+  20%{background:#ffedbc}
+  30%{background:#1cd8d2}
+  40%{background:#93edc7}
+  50%{background:#dd5e89}
+  60%{background:#1cd8d2}
+  70%{background:#dd5e89}
+  80%{background:#f7bb97}
+  90%{background:deepskyblue}
+  100%{background:orangered}
+}
 .container{
   width: 100%;
   height: inherit;
@@ -56,26 +78,24 @@ page{
 
 /* 发现 */
 #faxian{
-  display: flex;
-  flex-direction: column;
   width:98%;
-  border-radius:10rpx;
   position: relative;
   overflow-y:scroll;
-  background: linear-gradient(45deg, #00c9ff, #92fe9d);
 }
 
 /* 轮播 */
 .lb_tu{
-  width:100%;
   margin-top:10rpx;
   text-align: center;
 }
+.swiper-index{
+  width: 100%;
+  height: calc(322.8px*520/1350);
+}
+/* swiper高度=swiper宽 * 图片高度/图片宽度 */
 .lb_tu .banner{
-  height: inherit;
-  width:98%;
-  border-radius: 8rpx;
-  background-size: cover!important;
+  width: 100%;
+  border-radius:10rpx;
 }
 
 
@@ -86,7 +106,11 @@ page{
   height: 180rpx;
   display: flex;
   justify-content: center;
-  margin: 2rpx auto;
+  margin: 10rpx auto;
+  position: sticky;
+  top:0;z-index: 100;
+  background: linear-gradient(45deg,rgba(100, 150, 200, 0.36) 50%,rgba(100, 100,201, 0.3));
+  border-radius: 10rpx;
 }
 .second-navigator-bar>.bar-box{
   text-align: center;
@@ -108,13 +132,17 @@ page{
   height:50rpx;
   border-radius: 50%;
   padding: 20rpx;
-  background:none;
   margin:0 22rpx;
   position: relative;
   margin-top:22rpx;
 }
-.second-navigator-bar .opt:hover{
-  transform: rotate(360deg);
-  transition:all .6s linear;
+.second-navigator-bar .opt:active{
   background: deepskyblue;
 }
+
+.active{
+  background: deepskyblue!important;
+}
+
+
+/* css3效果 */

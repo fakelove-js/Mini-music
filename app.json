@@ -1,15 +1,22 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/search/search",
+    "pages/singer/singer",
+    
+    "pages/player/player",
+    "pages/logs/logs" 
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor":"#1ca5E6",
+    "navigationBarBackgroundColor": "#1ca5E6",
     "navigationBarTitleText": "staying",
     "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true
+    "navigationStyle":"custom"
   },
   "style": "v2",
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "sitemapLocation": "sitemap.json"
 }

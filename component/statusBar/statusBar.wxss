@@ -1,0 +1,32 @@
+/* component/statusBar/statusBar.wxss */
+@import "../../app.wxss";
+.base{
+  width: 100%;
+  position:fixed;
+  top: 0;
+}
+.head{
+  width: 100%;
+  background:none;
+  position:absolute;
+  z-index: 1000;
+  margin-top: 20px;
+}
+.title{
+  height: 100%;
+  width:55%;
+  display: flex;
+  align-items: center;
+  position:absolute;
+  left: 50px;
+  color: white;
+}
+
+.icon-fanhuianniu{
+  position: absolute;
+  line-height: 46px;
+  padding:0 1em;
+  border-radius: 50%;
+  z-index: 1001;
+  font-weight: bold;
+}

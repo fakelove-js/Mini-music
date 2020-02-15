@@ -1,4 +1,7 @@
 <!--index.wxml-->
+<view class="header">
+  <view>首页</view>
+</view>
 <view class="container">
   <!-- 导航tab切换 -->
   <view scroll-x="true" class="navigator_bar">
@@ -9,7 +12,7 @@
       <text class="{{currentTab==2?'curTab':''}}" bindtap="clickTab" data-cur="{{2}}">音乐社</text>
       <text class="{{currentTab==3?'curTab':''}}" bindtap="clickTab" data-cur="{{3}}">小程序</text>
     </view>
-    <view class="iconfont icon-sousuo"></view>
+    <navigator class="iconfont icon-sousuo" url="../search/search"></navigator>
   </view>
 
 
@@ -26,14 +29,15 @@
   <swiper-item id="faxian">
   <view class="lb_tu">
     <swiper 
+    class="swiper-index"
     indicator-dots='true' 
     indicator-color='rgba(0,15,20,0.2)' 
     indicator-active-color='deeppink' 
     easing-function="easeInCubic"
     interval="3000"
-    autoplay='true'>
-    <swiper-item wx:for="{{lb_imgs}}" wx:key="{{Math.random}}">
-      <image class="banner" style="background:url({{item}});"></image> 
+    autoplay="true">
+    <swiper-item wx:for="{{lb_imgs}}" wx:key="index">
+      <image class="banner" src="{{item.pic}}" mode="widthFix"></image> 
     </swiper-item>
     </swiper>
   </view>
@@ -41,24 +45,36 @@
   <!-- 推荐 歌单 排行 电台 -->
   <view class="second-navigator-bar">
     <view class="bar-box">
-      <view class="opt iconfont icon-tuijian"></view>
+      <view class="opt iconfont icon-tuijian {{isShow==0?'active':''}}" bindtap="showComponent" data-index="0"></view>
       <text>推荐</text>
     </view>
-    <view class="bar-box">
-      <view class="opt iconfont icon-gedan"></view>
+    <view class="bar-box" data-index="1" bindtap="showComponent">
+      <view class="opt iconfont icon-zhuanji {{isShow==1?'active':''}}"></view>
       <text>歌单</text>
     </view>
-    <view class="bar-box">
-      <view class="opt iconfont icon-paixingbang"></view>
+    <view class="bar-box" data-index="2" bindtap="showComponent">
+      <view class="opt iconfont icon-paixingbang {{isShow==2?'active':''}}"></view>
       <text>排行</text>
     </view>
-    <view class="bar-box">
-      <view class="opt iconfont icon-diantai"></view>
+    <view class="bar-box" data-index="3" bindtap="showComponent">
+      <view class="opt iconfont icon-diantai {{isShow==3?'active':''}}"></view>
       <text>电台</text>
     </view>
     
   </view>
-  <recommend></recommend>
+    <!-- 组件切换 -->
+    <block wx:if="{{isShow==0?true:false}}">
+      <recommend/>
+    </block>
+    <block wx:if="{{isShow==1?true:false}}">
+      <songlist />
+    </block>
+    <block wx:if="{{isShow==2?true:false}}">
+      <rank/>
+    </block>
+    <block wx:if="{{isShow==3?true:false}}">
+      <radios/>
+    </block>
   </swiper-item>
 
 

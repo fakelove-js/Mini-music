@@ -1,0 +1,11 @@
+<!--component/singerAlbum/singerAlbum.wxml-->
+<wxs src="../../utils/filtertool.wxs" module="filter"/>
+<scroll-view scroll-y>
+  <view wx:for="{{albums}}" wx:key="index" class="album">
+    <image src="{{item.blurPicUrl+'?param=200y200'}}" class="alpic"></image>
+    <view class="albumIntro">
+      <view class="alname">{{item.name}}</view>
+      <view class="pltime">{{filter.timeStamp(item.publishTime)}}　　{{item.size}}首</view>
+    </view>
+  </view>
+</scroll-view>

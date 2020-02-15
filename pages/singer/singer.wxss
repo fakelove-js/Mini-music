@@ -1,0 +1,51 @@
+/* pages/singerDetail/singer.wxss */
+@import "../../app.wxss";
+page{
+  height: 100%;
+}
+.singerDetail{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.pic{
+  width: 100%;
+  height:600rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.singerPic{
+  height: 100%;
+  width:100%;
+}
+.singerNavigator{
+  width: 100%;
+  height:30px;
+  display: flex;
+  border-radius:30px 30px;
+  background:white;
+  box-shadow: 0 2rpx 8rpx black;
+  position: absolute;
+  bottom:-15px;
+  justify-content: space-around;
+}
+.singerNavigator view{
+  height: 100%;
+  width:15%;
+  text-align: center;
+  line-height:30px;
+  font-size: smaller;
+  color: dimgrey;
+}
+.current{
+  border-bottom:2px solid deeppink;
+}
+.singerName{
+  color: white;
+  font-size:x-large;
+  position: absolute;
+  transform: translateY(3em);
+}

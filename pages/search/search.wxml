@@ -1,0 +1,48 @@
+<!--pages/search/search.wxml-->
+<statusBar statusTitle="搜索" txtcolor="black"></statusBar>
+<view class="search">
+  <view class="sousuo">
+    <input bindinput="getKeyword" type="text" placeholder="{{defaultKeyword}}" class="input"></input>
+    <icon class="iconfont icon-sousuo"></icon>
+    <!-- 候选关键词 -->
+    <view class="candidate" wx:if="{{inputValue!=''?true:false}}">
+    <!-- 歌手 -->
+      <view wx:for="{{searchResult.artists}}" wx:key="index">
+        <view class="artists rows" bindtap="singerDetail" 
+         data-singer="{{item}}"
+        >
+          <view class="symbol"><icon class="iconfont icon-yonghu"></icon><text class="note">歌手</text></view>
+          <image src="{{item.img1v1Url+'?param=300y300'}}"></image>
+          <text class="star_name">{{item.name}}</text>
+        </view>
+      </view>
+      <!-- 专辑 -->
+      <view class="albums rows" wx:if="{{searchResult.albums!=null?true:false}}">
+        <view class="symbol"><icon class="iconfont icon-zhuanji"></icon><text class="note">专辑</text></view>
+        <view class="Name">
+          <view wx:for="{{searchResult.albums}}" wx:key="index">{{item.name}}</view>
+        </view>
+      </view>
+      <!-- 歌曲 -->
+      <view class="songs rows" wx:if="{{searchResult.songs!=null?true:false}}">
+        <view class="symbol"><icon class="iconfont icon-jilugequ"></icon><text class="note">歌曲</text></view>
+        <view class="Name">
+          <view wx:for="{{searchResult.songs}}" wx:key="index" data-songid="{{item.id}}" bindtap="playThis">{{item.name}}</view>
+        </view>
+      </view>
+      <!-- mv -->
+      <view class="mv rows" wx:if="{{searchResult.mvs!=null?true:false}}">
+        <view class="symbol"><icon class="iconfont icon-bofang"></icon><text class="note">MV</text></view>
+        <view class="Name">
+          <view wx:for="{{searchResult.mvs}}" wx:key="index">{{item.name}}</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="defaultKeyword">
+    <text wx:for="{{defaulthotlist}}" wx:key="index" class="txt">{{item.first}}</text>
+  </view>
+
+  <!-- <musicbox></musicbox> -->
+</view>

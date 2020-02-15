@@ -1,0 +1,20 @@
+<!--component/statusBar/statusBar.wxml-->
+<wxs src="../../utils/filtertool.wxs" module="filter"/>
+<view 
+  class="base" 
+  style="height:{{statusBarHeight+4}}px;background:{{filter.changeColor(statusTitle)}}">
+</view>
+<view class="head" style="height:{{statusBarHeight*2.3}}px;background:{{bgcolor}}">
+  <!-- 返回按钮 -->
+  <icon 
+  bindtap="backPreviousPage" 
+  style="color:{{txtcolor}}"
+  class="iconfont icon-fanhuianniu">
+  </icon>
+  <!-- 标题 -->
+  <view 
+  class="title" 
+  style="color:{{txtcolor}}">
+  {{statusTitle}}
+  </view>
+</view>

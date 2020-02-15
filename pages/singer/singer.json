@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "statusbar":"../../component/statusBar/statusBar",
+    "singerDesc":"../../component/singerDesc/singerDesc",
+    "singerSong":"../../component/singerSong/singerSong",
+    "singerAlbum":"../../component/singerAlbum/singerAlbum",
+    "singerMv":"../../component/singerMv/singerMv"
+  }
+}

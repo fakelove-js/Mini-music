@@ -1,0 +1,106 @@
+/* animeComponent/loading/loading.wxss */
+
+.container {
+  position:fixed;
+  top:60%;
+  left:49%;
+}
+
+.blue {
+  background: #01aff6;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  position: absolute;
+  left:15px;
+  top: 0;
+  animation: blue 1s linear infinite;
+}
+
+.yellow {
+  background: #ffd036;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  position: absolute;
+  left: 0px;
+  top: -20px;
+  animation: yellow 1s linear infinite;
+}
+
+.pink {
+  background: #f20085;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  position: absolute;
+  left: -15px;
+  top: 0;
+  animation: pink 1s linear infinite;
+}
+.txt{
+  font-size: x-small;
+  color: darkblue;
+  font-weight: bolder;
+  position: absolute;
+  transform: translateX(-20px) translateY(10px)
+}
+
+@keyframes blue {
+  0% {
+    left: 15px;
+    top: 0;
+  }
+  8% {
+    left: -15px;
+    top: 0;
+  }
+  16% {
+    left: 0px;
+    top: -20px;
+  }
+  25% {
+    left: 15px;
+    top: 0;
+  }
+}
+
+@keyframes yellow {
+  26% {
+    left: 0px;
+    top: -20px;
+  }
+  34% {
+    left: 15px;
+    top: 0;
+  }
+  42% {
+    left: -15px;
+    top: 0;
+  }
+  50% {
+    left: 0px;
+    top: -15px;
+  }
+}
+@keyframes pink {
+  51% {
+    left: -15px;
+    top: 0;
+  }
+  59% {
+    left: 0px;
+    top: -20px;
+  }
+  67% {
+    left: 15px;
+    top: 0;
+  }
+  75% {
+    left: -15px;
+    top: 0;
+  }
+}

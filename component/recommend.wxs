@@ -1,6 +1,0 @@
-function format_playTime(val) {
-  return val.toString().slice(0, 2) + '.'+val.toString().substring(2,3)+'万';
-}
-module.exports = {
-  format_playTime: format_playTime
-}

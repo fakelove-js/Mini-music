@@ -1,0 +1,35 @@
+<!--component/recommend.wxml-->
+<wxs src="../../utils/filtertool.wxs" module="filter"/>
+<view class="recommend fade">
+<view class="recommend-title">
+  <text>推荐新曲</text>
+</view>
+  <view class="newSong">   
+    <view 
+    class="songItem"
+    wx:for="{{recoMusic}}"
+    wx:key="item"
+    style="background:url({{item.picUrl+'?param=300y300'}})"
+    data-songid="{{item.id}}"
+    bindtap="playThis"
+    >
+    <text class="sname">《{{item.name}}》{{item.song.artists[0].name}}</text>
+    <view class="playTime iconfont icon-erji">{{filter.format_playTime(item.song.bMusic.playTime)}}</view> 
+    </view>
+  </view>
+  <view class="recommend-title">
+    <text>最新MV</text>
+  </view>
+  <view class="newMv">
+    <view 
+    class="songItem"
+    wx:for="{{recoMv}}"
+    wx:key="item"
+    style="background:url({{item.cover+'?param=300y300'}})"
+    >
+    <text class="sname">《{{item.name}}》{{item.artists[0].name}}</text>
+    <view class="playTime iconfont icon-erji">{{filter.format_mv_playcount(item.playCount)}}</view>
+    </view>
+  </view>
+
+</view>

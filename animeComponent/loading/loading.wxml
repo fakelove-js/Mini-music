@@ -1,0 +1,7 @@
+<!--animeComponent/loading/loading.wxml-->
+<view class="container">
+  <view class="blue"></view>
+  <view class="yellow"></view>
+  <view class="pink"></view>
+  <text class="txt">loading···</text>
+</view>

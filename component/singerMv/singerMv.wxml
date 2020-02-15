@@ -1,0 +1,13 @@
+<!--component/singerMv/singerMv.wxml-->
+<scroll-view scroll-y>
+  <view class="mvs" wx:for="{{mvs}}" wx:key="index" data-mvid="{{item.id}}">
+    <view class="images">
+      <image class="it" src="{{item.imgurl16v9+'?param=300y180'}}" mode="widthFix"></image>
+      <text class="pCount">{{item.playCount}}</text>
+    </view>
+    <view class="mvIntro">
+      <view class="mvName">{{item.name}}</view>
+      <text class="pltime">{{item.publishTime}}</text>
+    </view>
+  </view>
+</scroll-view>

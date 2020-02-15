@@ -1,0 +1,163 @@
+/* pages/player/player.wxss */
+page{
+  height: 100%;
+}
+.player{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.controls{
+  height:16%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+  align-items: center;
+}
+
+.player-control{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.player-control .iconfont:nth-child(3){
+  font-size:2.5em
+}
+.iconfont{
+  font-size: xx-large;
+  color:darkslateblue;
+}
+.fm{
+  background: aliceblue;
+  width:120rpx;
+  height:120rpx;
+}
+.progress{
+  width:100%;
+  height:28px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.timeshow{
+  width: 100%;
+  color:gray;
+  text-align:right;
+  font-size:small;
+  padding:0 10rpx;
+  position: absolute;
+  bottom: 0;
+  z-index: 300;
+}
+#pro{
+  width:100%;
+  height:100%;
+  background: linear-gradient(to right, #fc00ff, #00dbde);
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  position: relative;
+}
+.drag{
+  font-size:25px;
+  background:white;
+  color:deepskyblue;
+  border-radius: 50%;
+  /* border:2px solid deeppink;
+  box-shadow:0px 0px 3px inset deeppink; */
+  position: absolute;
+  right:-7px;
+}
+.bigger{
+  transform: scale(1.2);
+  transform-origin: center;
+  transition: all .1s ease;
+}
+.bg-progress{
+  background:rgb(232, 232, 232);
+  width: 100%;
+  height: 20%;
+}
+
+/* 歌曲封面 */
+.songCover{
+  width: 100%;
+  height:85%;
+  margin-bottom: -15rpx;
+}
+.jiemian{
+  height:85%;
+  width: 100%;
+  position: absolute;
+}
+.jm-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.jm-item .detail{
+  width:500rpx;
+  height:500rpx;
+  background:url(//s3.music.126.net/mobile-new/img/disc-ip6.png?6979612…=);
+  background-color: black;
+  background-size: cover;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.detail image{
+  height:55%;
+  width:55%;
+  border-radius: 50%;
+  border:10rpx solid white;
+  position: absolute;
+  z-index:600;
+}
+
+.playing{
+  animation:rotate-center 15s linear infinite;
+}
+ @-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.lyricboard{
+  width: 100%;
+  height: 100%;       
+  background:rgba(232, 232, 232,0.2);
+  overflow-y: scroll;   
+}
+.lyric{
+  font-size: smaller;
+  text-align: center;
+  padding:1em 10px;
+}
+.lyricHighlight{
+  color: deepskyblue;
+}

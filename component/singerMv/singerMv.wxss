@@ -1,0 +1,40 @@
+/* component/singerMv/singerMv.wxss */
+.mvs{
+  display: flex;
+  margin:5px;
+  padding:5px;
+}
+.images{
+  position:relative;
+  width:100px;
+  height:60px;
+}
+.images .it{
+  width:100%;
+  height: 100%;
+  border-radius:8px;
+}
+.mvIntro{
+  display: flex;
+  flex-direction: column;
+  width:70%;
+}
+.mvIntro .mvName{
+  width:80%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  padding:5px
+}
+.pltime{
+  font-size: small;
+  color: gray;
+  padding:0px 5px;
+}
+.pCount{
+  position: absolute;
+  top: 0;left:5px;
+  color: white;
+  font-size: smaller;
+  z-index: 300;
+}

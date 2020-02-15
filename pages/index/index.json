@@ -1,6 +1,10 @@
 {
   "component": true,       
   "usingComponents": {
-    "recommend":"../../component/recommend"
+    "recommend":"../../component/recommend/recommend",
+    "songlist":"../../component/songlist/songlist",
+    "rank":"../../component/rank/rank",
+    "radios":"../../component/radios/radios",
+    "statusBar":"../../component/statusBar/statusBar"
   }
 }

@@ -1,0 +1,4 @@
+<!--component/rank/rank.wxml-->
+<view class="rank fade">
+  <text>排行</text>
+</view>

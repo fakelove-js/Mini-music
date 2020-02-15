@@ -1,0 +1,64 @@
+function format_playTime(val) {
+  return val.toString().slice(0, 2) + '.'+val.toString().substring(2,3)+'万';
+}
+function format_mv_playcount(val){
+  var str=val.toString();
+  switch(str.length){
+    case 3:
+      return '0.0'+str.slice(0, 1)+'万';
+      break;
+    case 4:
+      return '0.'+str.slice(0, 1)+'万';
+      break;
+    case 5:
+      return str.slice(0, 1) + '.'+val.toString().substring(1,2)+'万';
+      break;
+    case 6:
+      return str.slice(0, 2) + '.'+val.toString().substring(2,3)+'万';
+      break;
+      default:
+        break
+  }
+}
+
+function format_time(time){
+  var hour=0
+  var minutes=0
+  var second= Math.ceil(time)
+  if(second>60){
+    minutes=(second/60)
+    second=(second%60)
+    if(minutes>60){
+      minutes=(minutes%60)
+      hour=(minutes/60)
+    }
+  }
+  var time=''
+  if(second<10){
+    time+=parseInt(minutes)+':0'+second
+  }else{
+    time+=parseInt(minutes)+':'+second
+  }
+  return time
+}
+
+function timeStamp(t){
+  var d=getDate(t)
+  return d.getFullYear()+'.'+(d.getMonth()+1)+'.'+d.getDate()
+}
+
+function changeColor(c){
+  switch(c){
+    case '搜索':return 'linear-gradient(to left, #acb6e5, #86fde8)';
+    case '':return 'linear-gradient(to right, #7f00ff, #e100ff)'
+    default:return 'linear-gradient(to right, #7f00ff, #e100ff)'
+  }
+}
+
+module.exports = {
+  format_playTime:format_playTime,
+  format_mv_playcount:format_mv_playcount,
+  format_time:format_time,
+  timeStamp:timeStamp,
+  changeColor:changeColor
+}

@@ -1,0 +1,14 @@
+<!--component/singer/singerDesc/singerDesc.wxml-->
+<view>
+  <view style="padding:5px 10px">热门歌曲</view>
+  <loading wx:if="{{loading}}"/>
+  <scroll-view scroll-y="true" bindscrolltolower="{{scrollEvent==true?'scrollBottom':''}}" class="scrollH">
+    <view wx:for="{{hotSong}}" wx:key="index" class="hotSong">
+      <text class="number">{{index+1}}</text>
+      <view class="songName" bindtap="playThis" data-songid="{{item.id}}" data-songname="{{item.name}}">
+        <view>{{item.name}}</view>
+        <view class="al">{{item.al.name}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

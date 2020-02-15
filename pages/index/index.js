@@ -1,4 +1,4 @@
-
+const Api=require("../../utils/api")
 Page({
 
   /**
@@ -8,28 +8,47 @@ Page({
     lb_imgs:[],
     recoMusic:[],
     currentTab:1,
-    curTab:'curTab'
+    isShow:0
   },
 
   switchTab:function(e){
     this.setData({ currentTab: e.detail.current});
   },
-  clickTab(e){
+  clickTab:function(e){
     var index = e.currentTarget.dataset.cur;
     this.setData({currentTab:index});
+  },
+  showComponent:function(e){
+    var cur=e.currentTarget.dataset.index;
+    this.setData({
+      isShow:cur
+    })
   },
   /**
    * 生命周期函数--监听页面加载 只会调用一次
    */
   onLoad: function (options) {
-    
+    var _this = this;
+    wx.showLoading({
+      title: '加载中',
+      mask:false
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+    },500)
+
+    Api.getBanner().then((res)=>{
+      _this.setData({
+        lb_imgs:res.banners
+      })
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成 
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -37,22 +56,6 @@ Page({
    * 
    */
   onShow: function () {
-    var _this = this;
-    wx.request({
-      url: 'http://118.25.2.21:3000/banner?type=1',
-      header: {
-        'Content-Type': 'appliction/json'
-      },
-      success: function (res) {
-        res.data.banners.forEach((el, index) => {
-          var ban = "lb_imgs[" + index + "]";
-          _this.setData({
-            [ban]: el.pic
-          })
-        })
-      }
-    })
-
 
   },
 

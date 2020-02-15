@@ -1,0 +1,27 @@
+<!--pages/singerDetail/singer.wxml-->
+<statusbar statusTitle="歌手" txtcolor="white"></statusbar>
+<view class="singerDetail">
+  <view class="pic">
+    <view class="singerNavigator">
+      <view bindtouchstart="singerDetailSwitch" data-index="1" class="{{current==1?'current':''}}">主页</view>
+      <view bindtouchstart="singerDetailSwitch" data-index="2" class="{{current==2?'current':''}}">单曲</view>
+      <view bindtouchstart="singerDetailSwitch" data-index="3" class="{{current==3?'current':''}}">专辑</view>
+      <view bindtouchstart="singerDetailSwitch" data-index="4" class="{{current==4?'current':''}}">MV</view>
+    </view>
+    <text class="singerName">{{singerName}}</text>
+    <image class="singerPic" src="{{singerPic}}"></image>
+  </view>
+
+  <block wx:if="{{current==1?true:false}}">
+    <singerDesc/>
+  </block>
+  <block wx:if="{{current==2?true:false}}">
+    <singerSong/>
+  </block>
+  <block wx:if="{{current==3?true:false}}">
+    <singerAlbum/>
+  </block>
+  <block wx:if="{{current==4?true:false}}">
+    <singerMv/>
+  </block>
+</view>

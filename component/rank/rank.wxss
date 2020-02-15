@@ -1,0 +1,10 @@
+/* component/rank/rank.wxss */
+@import "../../app.wxss";
+.rank{
+  width:98%;
+  height:300px;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  position: relative;
+  background:deeppink;
+}

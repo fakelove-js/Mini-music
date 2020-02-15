@@ -1,0 +1,51 @@
+<!--pages/player/player.wxml-->
+<wxs src="../../utils/filtertool.wxs" module="filter"/>
+<statusBar statusTitle="{{songname}}" txtcolor="black"></statusBar>
+<view class="player">
+  <!-- 歌曲封面，详情等 -->
+  <view class="songCover">
+  <!-- swiper1 -->
+    <swiper current="0" class="jiemian">
+      <swiper-item class="jm-item">
+        <view class="detail">
+          <image src="{{fm}}" class="{{isPlay==true?playing:''}}"></image>
+        </view>
+        <view class="timeshow">{{filter.format_time(progressRate)}}</view>
+      </swiper-item>
+  <!-- swiper1 -->
+      <swiper-item class="jm-item">
+        <view class="lyricboard">
+　　      <view class="lyric" wx:for="{{lyricArray}}" wx:key="item">
+          {{item}}
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 进度条 -->
+  <view class="controls">
+    <view class="progress" id="progress" bindtouchstart="controlProgress">
+      <view class="bg-progress">
+      <view id="pro" style="width:{{progress}}%">
+        <!-- 拖拽按钮 -->
+        <view
+        class="iconfont icon-jilugequ drag {{zoom==true?'bigger':''}}" 
+        bindtouchstart="touchStart" 
+        bindtouchmove="touchMove" 
+        bindtouchend="touchEnd"
+        ></view> 
+
+      </view>
+      </view>
+    </view>
+    <!-- 音乐播放器 -->
+    <view class="player-control">
+      <image class="fm" src="{{fm}}"></image>
+      <icon class="iconfont icon-shangyishou"></icon>
+      <icon class="iconfont {{isPlay==false?class[0]:class[1]}}" bindtouchend="goPlay"></icon>
+      <icon class="iconfont icon-xiayishou" bindtouchstart="nextSong"></icon>
+      <icon class="iconfont icon-suiji"></icon>
+    </view>
+  </view>
+</view>

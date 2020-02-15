@@ -1,0 +1,31 @@
+/* component/singerAlbum/singerAlbum.wxss */
+.album{
+  display: flex;
+  margin:10px 2px;
+  padding:5px 10px;
+}
+.alpic{
+  width:60px;
+  height:60px;
+  border-radius:8px;
+}
+.albumIntro{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width:75%;
+}
+.albumIntro .alname{
+  width:80%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: large;
+  padding:5px 10px;
+}
+.albumIntro .pltime{
+  width:80%;
+  font-size:small;
+  padding:5px 10px;
+  color: gray;
+}

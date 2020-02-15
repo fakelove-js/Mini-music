@@ -1,0 +1,97 @@
+/* pages/search/search.wxss */
+.search{
+  width: 100%;
+  height:auto;
+  background:white;
+  position: relative;
+  top:70px;
+}
+.sousuo{
+  margin-top: 5rpx;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.input{
+  height:60rpx;
+  font-size: small;
+  text-align: center;
+  width:80%;
+  color: gray;
+  border-bottom:1px solid silver;
+}
+.icon-sousuo{
+  color:grey;
+  font-size:large;
+  position: absolute;
+  right:.5em;top:-1rpx;
+}
+.defaultKeyword{
+  width:80%;
+  height: auto;
+  margin: 0 auto;
+  padding: 50rpx;
+}
+.defaultKeyword .txt{
+  color: gray;
+  font-size:smaller;
+  padding:10rpx 20rpx;
+}
+.rows{
+  margin: 10rpx;
+  border: 2px silver solid;
+  border-radius: 20rpx;
+  padding:20rpx;
+}
+.note{
+  font-size: xx-small;
+}
+.candidate{
+  width:90%;
+  height:auto;
+  background:rgb(250, 250, 250);
+  position: absolute;
+  top:2em;
+  display: flex;
+  flex-direction: column;
+}
+.artists{
+  display: flex;
+  align-items: center;
+}
+.artists image{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.artists text{
+  padding: 5px 10px;
+}
+.symbol{
+  width: 50px;
+  height:inherit;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.symbol .iconfont{
+  display: inline-block;
+  font-size: x-large;
+  color: gray;
+}
+.albums{
+  display: flex;
+  height: auto;
+}
+.Name view{
+  font-size: x-small;
+  padding: 5rpx 10rpx;
+}
+.mv{
+  display: flex;
+}
+.songs{
+  display: flex;
+}
